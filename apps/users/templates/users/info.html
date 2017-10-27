@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Info</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Travelers</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/travels">Travels</a></li>
+              <li><a href="/addplan">Add Plan</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="container">
+            <h1>This is the information, {{ request.session.email.name }}.</h1>
+            <h3>Creator: {{trip.creator.name}}</h3>
+            <h3>Destination: {{trip.destination}}</h3>
+            <h3>Description: {{trip.description}}</h3>
+            <h3>Travel Start At: {{trip.travel_start_date}}</h3>
+            <h3>Travel End At: {{trip.travel_start_date}}</h3>
+            {% for traveler in travelers %}
+                <p>{{traveler.traveler.name}}</p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
